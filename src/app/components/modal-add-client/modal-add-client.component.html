@@ -1,0 +1,49 @@
+
+<!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div  class="modal-header">
+        <h1 class="modal-title fs-5" >Nuevo Cliente</h1>
+      </div>
+      <div class="modal-body">
+
+        <div class="row g-3" >
+          <div class="col-md-6">
+            <label class="form-label">Nombre:</label>
+            <input  type="text" class="form-control" [(ngModel)]="Pnombre" >
+          </div>
+          <div class="col-md-6">
+            <label for="validationCustom02" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" [(ngModel)]="Papellido">
+          </div>
+
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Edad:</label>
+            <input type="number"  class="form-control" [(ngModel)]="Pedad">
+
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Fech. Nac.:</label>
+            <input type="date" class="form-control" [(ngModel)]="PfechaNac">
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">DNI:</label>
+            <input type="number" class="form-control"  [(ngModel)]="Pdni">
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpForm()">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="addClient()" data-bs-dismiss="modal" >Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

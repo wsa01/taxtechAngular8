@@ -23,4 +23,10 @@ export class ClientService {
     return this.http.delete(url);
   }
 
+  addClient(client:Client){
+    console.log("cliente")
+    console.log(client)
+    let url = `${this.urlBase}/createclient`;
+    return this.http.post(url,client)
+  }
 }

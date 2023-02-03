@@ -1,8 +1,7 @@
 export interface Client {
-  id:Number;
-  nombre:String;
-  apellido:String;
-  edad:String;
-  fechNac:String;
-  dni:Number;
+  nombre:string;
+  apellido:string;
+  edad:number;
+  fechNac:string;
+  dni:number;
 }

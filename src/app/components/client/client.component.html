@@ -3,7 +3,20 @@
 <div class="container">
   <div class="card" >
     <div class="card-header">
-        <h2 align="center" class="card-title">Clientes Registrados</h2>
+      <div class="container ">
+        <div class="row align-items-center">
+          <div class="col-3">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              + Add
+            </button>
+          </div>
+          <div class="col-6">
+            <h2 align="center" class="card-title">Clientes Registrados</h2>
+          </div>
+
+        </div>
+      </div>
+
     </div>
     <div class="card-body">
       <div style="max-height: 15rem; overflow: auto;" class="rounded">
@@ -27,7 +40,7 @@
               <td class="text-center">{{client.dni}}</td>
               <td class="align-middle">
                 <div class="d-flex justify-content-around">
-                  <button type="button" class="btn btn-primary" >Editar</button>
+                  <button type="button" class="btn btn-primary" (click)="updateClient(client)" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" >Editar</button>
                   <button type="button" class="btn btn-danger" (click)="deleteClient(client.dni)">Delet</button>
               </div>
               </td>
@@ -36,9 +49,11 @@
           </tbody>
         </table>
       </div>
-
-
     </div>
   </div>
+
+
+<app-modal-add-client (respEvent)="updateListClient($event)"></app-modal-add-client>
+<app-modal-edit-client (respEvent)="updateListClient($event)" ></app-modal-edit-client>
 </div>
 
