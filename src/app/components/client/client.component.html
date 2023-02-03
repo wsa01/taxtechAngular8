@@ -1,0 +1,44 @@
+<br>
+<br>
+<div class="container">
+  <div class="card" >
+    <div class="card-header">
+        <h2 align="center" class="card-title">Clientes Registrados</h2>
+    </div>
+    <div class="card-body">
+      <div style="max-height: 15rem; overflow: auto;" class="rounded">
+        <table class="table align-middle">
+          <thead class="table-dark">
+            <tr class="sticky-top">
+              <th scope="col" class="text-center">#</th>
+              <th scope="col" class="text-center">Nombre</th>
+              <th scope="col" class="text-center">Edad</th>
+              <th scope="col" class="text-center">Fech. Nacimiento</th>
+              <th scope="col" class="text-center">DNI</th>
+              <th scope="col" class="text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of clients, let i=index">
+              <th scope="row" class="text-center">{{i+1}}</th>
+              <td class="text-center">{{client.nombre +" "+ client.apellido}}</td>
+              <td class="text-center">{{client.edad}}</td>
+              <td class="text-center">{{client.fechNac}}</td>
+              <td class="text-center">{{client.dni}}</td>
+              <td class="align-middle">
+                <div class="d-flex justify-content-around">
+                  <button type="button" class="btn btn-primary" >Editar</button>
+                  <button type="button" class="btn btn-danger" (click)="deleteClient(client.dni)">Delet</button>
+              </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

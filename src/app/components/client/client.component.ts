@@ -1,25 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'console';
 import { Client } from 'src/app/models/Client';
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-client',
+  templateUrl: './client.component.html',
+  styleUrls: ['./client.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ClientComponent implements OnInit {
 
   clients:Client[];
 
   constructor(
-    private miServicio:ClientService,
     private clientService:ClientService,
-
   ) { }
 
   ngOnInit() {
-    this.getClients()
+    this.getClients();
   }
 
   getClients(){
@@ -30,6 +27,15 @@ export class HomeComponent implements OnInit {
         console.log("error")
       }
       )
+  }
+
+  deleteClient(dni:number){
+    this.clientService.deleteClient(dni)
+      .subscribe((resp:any)=>{
+        console.log(resp.code);
+        this.getClients();
+      })
+
   }
 
 }
